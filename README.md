@@ -19,8 +19,9 @@ docker build -t sileroimg .
 
 Run the compiled application with the following command-line options:
 
+'''bash
 docker run yourimg -i /root/data/output.pcm -r 48000 -d 2
-
+'''
 
 ### Options
 
