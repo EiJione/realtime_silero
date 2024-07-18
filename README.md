@@ -19,9 +19,9 @@ docker build -t sileroimg .
 
 Run the compiled application with the following command-line options:
 
-'''bash
-docker run yourimg -i /root/data/output.pcm -r 48000 -d 2
-'''
+```bash
+docker run sileroimg -i /root/data/output.pcm -r 48000 -d 2
+```
 
 ### Options
 
@@ -29,13 +29,6 @@ docker run yourimg -i /root/data/output.pcm -r 48000 -d 2
 - `-r` Sample rate of the PCM file (default is 16000 Hz).
 - `-d` Channel depth (1 for mono, 2 for stereo, default is 1).
 
-## Example
-
-To analyze a mono PCM file at 16000 Hz sample rate:
-
-```bash
-./vad_application -i audio.pcm -r 16000 -d 1
-```
 
 ## Output
 
