@@ -5,24 +5,22 @@ This program utilizes the Silero Voice Activity Detection (VAD) model to analyze
 
 ## Requirements
 
-- C++ compiler with C++11 support
-- ONNX Runtime (for running the ONNX model)
+- docker
 
 ## Compilation
 
-Compile the program with C++11 support enabled. For example, using `g++`:
+Compile the program with docker support enabled. 
 
 ```bash
-g++ -std=c++11 -o vad_application your_program.cpp -l onnxruntime
+docker build -t sileroimg .
 ```
 
 ## Usage
 
 Run the compiled application with the following command-line options:
 
-```bash
-./vad_application -i <path_to_pcm_file> -r <sample_rate> -d <channel_depth>
-```
+docker run yourimg -i /root/data/output.pcm -r 48000 -d 2
+
 
 ### Options
 
