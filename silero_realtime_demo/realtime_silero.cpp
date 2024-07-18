@@ -321,14 +321,14 @@ int main(int argn, char** argv)
     std::string path = "silero_vad.onnx";
     VadIterator vad(path);
     int opt = 0;
-    std::string pcmu_file;
+    std::string pcm_file;
     int rate = 16000;
     int deepth = 1;//声道数
     while ((opt = getopt(argn, argv, "hi:r:d:")) != -1)
     {
       switch (opt) {
         case 'i':
-            pcmu_file = optarg;
+            pcm_file = optarg;
             break;
         case 'r':
             rate = atoi(optarg);
@@ -338,20 +338,20 @@ int main(int argn, char** argv)
             break;
         default:
           std::cerr << "Usage: " << argv[0] << "\r\n"
-               << " [-i pcmu file] \r\n"
+               << " [-i pcm file] \r\n"
                << " [-r sample rate] \r\n"
                << " [-d deepth] \r\n"
                << std::endl;
           return -1;
       }
     }
-    if (pcmu_file.empty()) {
-        std::cout << "pcmu file is empty. \r\n";
+    if (pcm_file.empty()) {
+        std::cout << "pcm file is empty. \r\n";
         return -1;
     }
-    FILE* file_p = fopen(pcmu_file.c_str(), "r");
+    FILE* file_p = fopen(pcm_file.c_str(), "r");
     if (!file_p) {
-        std::cout << "fail to open:" << pcmu_file << ".\r\n";
+        std::cout << "fail to open:" << pcm_file << ".\r\n";
         return -2;
     }
     if (deepth ==2)
